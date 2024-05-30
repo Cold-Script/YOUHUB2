@@ -22,8 +22,14 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠿⣶⣤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣤⡤⠞⠁⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠋⠉
 ]]--
+local repo = 'https://raw.githubusercontent.com/mstudio45/LinoriaLib/main/'
+
+local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
+local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
 -- // Service \\
 local Light = game.Lighting
+local W = Library:Notify
 -- // Execute \\
 if _G.A then
 Light.Brightness = 5
@@ -34,6 +40,9 @@ game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 19
 game.CurrentCamera.FieldOfView = 120
 return
 end
+W("[Nofitication Warning] : Nhập 1 lần để ESP và nhập 2 lần để xoá xương mù,sáng,cho tốc độ & độ xa màn hình")
+task.wait(3)
+W("[Nofitication Warning] : Loading!!!")
 _G.A = true
 -- // ESP \\
 local player = game.Players.LocalPlayer
