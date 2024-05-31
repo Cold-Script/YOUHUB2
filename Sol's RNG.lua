@@ -27,10 +27,12 @@ local repo = 'https://raw.githubusercontent.com/mstudio45/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+Library:Notify("Nhập 1 lần để Trực Quang Item , nhập lần 2 để xoá hiệu ứng bóng tối")
 -- // Service \\
 local Light = game.Lighting
 -- // Execute \\
 if _G.A then
+Library:Notify("Đã nhận hiệu ứng bóng tối")
 Light.Brightness = 5
 Light.GlobalShadows = false
 Light.FogEnd = 9e9
