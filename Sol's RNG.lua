@@ -27,7 +27,7 @@ local repo = 'https://raw.githubusercontent.com/mstudio45/LinoriaLib/main/'
 local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
 local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
 local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
-Library:Notify("Nhập 1 lần để Trực Quang Item , nhập lần 2 để xoá hiệu ứng bóng tối")
+
 -- // Service \\
 local Light = game.Lighting
 -- // Execute \\
@@ -37,12 +37,13 @@ Light.Brightness = 5
 Light.GlobalShadows = false
 Light.FogEnd = 9e9
 Light.OutdoorAmbient = Color3.new(1,1,1)
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 19
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 17.5
 game.CurrentCamera.FieldOfView = 120
 return
 end
 _G.A = true
 -- // ESP \\
+Library:Notify("Nhập 1 lần để Trực Quang Item , nhập lần 2 để xoá hiệu ứng bóng tối")
 local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
@@ -85,7 +86,7 @@ local function drawLineToItem(item)
 end
 
 local function updateLines()
-    while wait(0.25) do
+    while task.wait() do
         clearLines()
         for _, item in pairs(droppedItemsFolder:GetDescendants()) do
             if item:IsA("BasePart") or item:IsA("Model") then
