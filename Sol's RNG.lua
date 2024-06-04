@@ -86,7 +86,7 @@ local function drawLineToItem(item)
 end
 
 local function updateLines()
-    while task.wait() do
+    while task.wait(1.25) do
         clearLines()
         for _, item in pairs(droppedItemsFolder:GetDescendants()) do
             if item:IsA("BasePart") or item:IsA("Model") then
